@@ -14,6 +14,9 @@ In this repo, `data/Boundary Data/` holds the boundary files organized by group 
 - `src/poem_extraction.py` — extract poem-level tokens from EF using PHUG boundaries and prepare inputs for analysis.
 - `src/wordcloud.ipynb` — build group-level word clouds from the extracted vocabulary.
 
+**Data availability.** The PHUG-derived HTRC Extracted Features dataset is archived on Zenodo  
+([record](https://zenodo.org/records/19261037); DOI: [10.5281/zenodo.19261037](https://doi.org/10.5281/zenodo.19261037)).
+
 ## Repository Structure
 ```text
 .
