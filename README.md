@@ -3,19 +3,16 @@ This repo contains data and code for our DCMI 2026 paper:
 **Equitable Metadata for Diverse Voices: Sustainable Computational Poetry Analysis with HathiTrust Extracted Features**
 We map the PHUG poetry dataset to HTRC Extracted Features (EF v2.5) and test whether EF can still support computational poetry research after HTRC infrastructure retirement.
 
-
-## Dataset Description
-### PHUG (base dataset)
-- 4,724 poems
-- 120 poetry collections
-- Includes poem-level boundary metadata (start/end pages)
-- Covers poets from historically underrepresented groups in the U.S.
-### EF-mapped PHUG (this repo)
-- PHUG volumes aligned to HTRC Extracted Features
-- Primary version: **EF v2.5**
-- Match result: **100% coverage**
-- Includes token-level frequency inputs used in analysis
-
+## Data Description
+**PHUG (Poets from Historically Underrepresented Groups)** is a curated collection of American poetry in the HathiTrust Digital Library (HTDL) by poets from historically underrepresented groups. It includes poem-level boundary annotations (start/end pages) so we can align poems with page-based EF records.
+In this repo, `data/Boundary Data/` holds the boundary files organized by group (AA, APA-AA, APA-PA, LXA, NA).  
+`data/HTRC Extract Feature Download/` stores the EF volume files we used (compressed JSON, `.json.bz2`).  
+`data/Wordcloud/` contains the word cloud images produced for each group.
+**Coverage:** with EF v2.5, we matched **all 120 volumes and 4,723 poems (100%)**.
+## Code
+- `src/HTRC_EF_download_rsync_2.5.ipynb` — download / sync EF files for the PHUG volumes (rsync workflow).
+- `src/poem_extraction.py` — extract poem-level tokens from EF using PHUG boundaries and prepare inputs for analysis.
+- `src/wordcloud.ipynb` — build group-level word clouds from the extracted vocabulary.
 
 ## Repository Structure
 ```text
